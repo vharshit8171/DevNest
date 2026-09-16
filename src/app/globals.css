@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
+/* Hide scrollbar but keep scrolling */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --border: #e5e7eb;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  /* brand accent (light = cyan → blue) */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --accent-from: #22d3ee;
+  --accent-to: #2563eb;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #0a0a0f;
+  --foreground: #f8f8fa;
+
+  --card: #12121a;
+  --card-foreground: #f8f8fa;
+  --border: #26262f;
+  --muted: #16161f;
+  --muted-foreground: #9a9aa8;
+
+  /* brand accent (dark = indigo → purple) */
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --accent-from: #6366f1;
+  --accent-to: #a855f7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --radius-lg: var(--radius);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-gradient-accent {
+  background-image: linear-gradient(to right, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-accent {
+  background: linear-gradient(
+    to right,
+    var(--accent-from),
+    var(--accent-to)
+  );
 }
