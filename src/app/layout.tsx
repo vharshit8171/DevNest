@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { geistSans, geistMono } from "@/lib/fonts";
+import { geistSans, geistMono } from "../../public/images/fonts/fonts";
 import ThemeProvider from "@/components/layout/ThemeProvider";
 
 import "./globals.css";

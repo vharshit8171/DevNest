@@ -9,8 +9,8 @@ export function ModeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    function controlMount(){
-        setMounted(true);
+    function controlMount() {
+      setMounted(true);
     }
 
     controlMount();

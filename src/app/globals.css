@@ -12,39 +12,44 @@ html::-webkit-scrollbar {
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-
+  --background: #f8fafc;
+  --foreground: #0b133b;
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #0b133b;
   --border: #e5e7eb;
   --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --muted-foreground: #7b7e8f;
 
-  /* brand accent (light = cyan → blue) */
-  --primary: #2563eb;
+  /* Light mode: darker cyan → blue */
+  --primary: #285dcc;
   --primary-foreground: #ffffff;
-  --accent-from: #22d3ee;
-  --accent-to: #2563eb;
+
+  --accent-from: #159fbd;
+  --accent-to: #2867d4;
+
+  /* Secondary accent for badges/tags in light mode */
+  --accent-secondary: #2478b8;
 
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: #0a0a0f;
-  --foreground: #f8f8fa;
+  --background: #070a11;
+  --foreground: #f0f1f4;
+  --card: #0a0d14;
+  --card-foreground: #f0f1f4;
+  --border: #1c202c;
+  --muted: #0b0c19;
+  --muted-foreground: #7c7f88;
 
-  --card: #12121a;
-  --card-foreground: #f8f8fa;
-  --border: #26262f;
-  --muted: #16161f;
-  --muted-foreground: #9a9aa8;
-
-  /* brand accent (dark = indigo → purple) */
-  --primary: #6366f1;
+  /* Dark mode: blue → indigo/violet (sampled directly from the dark UI) */
+  --primary: #3a42cc;
   --primary-foreground: #ffffff;
-  --accent-from: #6366f1;
-  --accent-to: #a855f7;
+  --accent-from: #254ad7;
+  --accent-to: #6a4ae5;
+
+  /* Secondary accent for badges/tags in dark mode */
+  --accent-secondary: #8d8fba;
 }
 
 @theme inline {
@@ -57,8 +62,8 @@ html::-webkit-scrollbar {
   --color-muted-foreground: var(--muted-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-accent-secondary: var(--accent-secondary);
   --radius-lg: var(--radius);
-
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -67,6 +72,7 @@ html::-webkit-scrollbar {
   * {
     border-color: var(--border);
   }
+
   body {
     background: var(--background);
     color: var(--foreground);
@@ -75,7 +81,11 @@ html::-webkit-scrollbar {
 }
 
 .text-gradient-accent {
-  background-image: linear-gradient(to right, var(--accent-from), var(--accent-to));
+  background-image: linear-gradient(
+    to right,
+    var(--accent-from),
+    var(--accent-to)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -87,4 +97,39 @@ html::-webkit-scrollbar {
     var(--accent-from),
     var(--accent-to)
   );
+}
+
+.gradient-accent-diagonal {
+  background: linear-gradient(
+    135deg,
+    var(--accent-from) 0%,
+    var(--accent-to) 100%
+  );
+}
+
+.gradient-glow {
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--accent-from) 15%, transparent),
+    transparent 70%
+  );
+}
+
+.gradient-icon-bg {
+  background: linear-gradient(
+    135deg,
+    var(--accent-from),
+    var(--accent-to)
+  );
+}
+
+.text-gradient-stats {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--accent-from),
+    var(--accent-to)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
