@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Eye, MessageCircle, ThumbsUp } from "lucide-react";
-import type { CommunityPost, PostTag } from "@/data/constants";
+import type { CommunityPost, PostTag } from "@/types/types";
 
 const tagStyles: Record<PostTag, string> = {
   Question:

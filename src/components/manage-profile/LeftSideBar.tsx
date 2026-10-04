@@ -25,7 +25,7 @@ export default function LeftSidebar({ currentStep }: LeftSidebarProps) {
 
   return (
     <div className="w-full shrink-0 lg:w-77 flex flex-col gap-3">
-      <div className="bg-card border border-border rounded-lg p-5 flex flex-col">
+      <div className="bg-card border border-border rounded-lg p-5 flex flex-col shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
         <div className="flex flex-col items-center">
           <h2 className="text-[25px] font-semibold text-foreground">
             Profile Setup
@@ -138,7 +138,7 @@ export default function LeftSidebar({ currentStep }: LeftSidebarProps) {
         </div>
       </div>
 
-      <div className="bg-card border border-border rounded-lg p-4 flex flex-col gap-3">
+      <div className="bg-card border border-border rounded-lg p-4 flex flex-col gap-3 shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
         <div className="w-14 h-14 mx-auto">
           <svg viewBox="0 0 56 56" fill="none" className="w-full h-full">
             <circle
@@ -199,7 +199,7 @@ export default function LeftSidebar({ currentStep }: LeftSidebarProps) {
         </div>
       </div>
 
-      <div className="bg-card border border-border rounded-lg p-4 flex flex-col gap-3">
+      <div className="bg-card border border-border rounded-lg p-4 flex flex-col gap-3 shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
         <div className="w-16 h-16 mx-auto">
           <svg viewBox="0 0 56 56" fill="none" className="w-full h-full">
             <path d="M22 44L18 52L26 48L22 44Z" fill="var(--accent-from)" />

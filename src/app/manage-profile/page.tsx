@@ -1,17 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
-import { ModeToggle } from "@/components/layout/ModeToggle";
-import LeftSidebar from "@/components/manage-profile/LeftSideBar";
-import TopProgress from "@/components/manage-profile/TopProgress";
+import { Navbar } from "@/components/home/Navbar";
 import Form from "@/components/manage-profile/Form";
-import AboutYouForm from "@/components/manage-profile/AboutYouForm";
-import SkillsInterestsForm from "@/components/manage-profile/SkillsInsterestsForm";
 import LinksForm from "@/components/manage-profile/LinksForm";
 import ReviewForm from "@/components/manage-profile/ReviewForm";
-import Link from "next/link";
+import LeftSidebar from "@/components/manage-profile/LeftSideBar";
+import TopProgress from "@/components/manage-profile/TopProgress";
+import AboutYouForm from "@/components/manage-profile/AboutYouForm";
+import SkillsInterestsForm from "@/components/manage-profile/SkillsInsterestsForm";
 
 export default function ProfileSetupPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -30,51 +28,9 @@ export default function ProfileSetupPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-30 w-full bg-background/85 backdrop-blur-xl">
-        <div className="mx-auto flex h-18 max-w-360 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            aria-label="DevNest home"
-            className="group inline-flex shrink-0 items-center cursor-pointer"
-          >
-            <Image
-              src="/Logo.png"
-              alt=""
-              width={42}
-              height={42}
-              priority
-              className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-18"
-            />
+      <Navbar variant="app" showAvatar />
 
-            <span className="flex items-center text-[24px] font-semibold leading-none tracking-[-0.8px] sm:text-[30px]">
-              <span className="text-foreground">Dev</span>
-              <span className="text-gradient-accent">Nest</span>
-            </span>
-          </Link>
-
-          <div className="flex items-center gap-2">
-            <ModeToggle />
-
-            <button
-              type="button"
-              aria-label="Open profile menu"
-              className="flex items-center gap-2"
-            >
-              <div className="h-10 w-10 overflow-hidden rounded-full border border-border">
-                <Image
-                  src="/images/avatars/avatar-4.jpg"
-                  alt="Profile"
-                  width={36}
-                  height={36}
-                  className="h-full w-full object-cover cursor-pointer transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-300 px-4 py-6 sm:px-6 lg:px-16 lg:py-8">
+      <main className="mx-auto max-w-300 px-4 py-6 sm:px-6 lg:px-16 lg:py-6">
         <div className="flex flex-col items-start gap-6 lg:flex-row lg:gap-3.5">
           <LeftSidebar currentStep={currentStep} />
 

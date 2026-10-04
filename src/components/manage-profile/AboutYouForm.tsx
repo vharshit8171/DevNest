@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Lightbulb, UserRound } from "lucide-react";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 import Select from "../ui/Select";
 import Button from "../ui/Button";
+import { ArrowLeft, ArrowRight, Lightbulb, UserRound } from "lucide-react";
 
 interface AboutYouFormProps {
   onNext: () => void;

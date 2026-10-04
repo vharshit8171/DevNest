@@ -4,8 +4,8 @@ import { CommunityCard } from "@/components/layout/CommunityCard";
 
 export function CommunitySection() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-5 pt-4 sm:px-8">
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <section className="mx-auto w-full max-w-6xl px-5 pt-10 sm:px-8">
+      <div className="mb-3.5 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-foreground sm:text-[22px]">
             A thriving developer community

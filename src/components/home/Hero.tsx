@@ -32,7 +32,7 @@ export function Hero() {
       <div className="mx-auto max-w-7xl px-5 pb-16 pt-16 sm:px-6 sm:pt-20 lg:px-8 lg:pb-18 lg:pt-10">
         <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
-            <div className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-cyan-50 via-blue-50 to-indigo-50 px-4 py-1 font-medium shadow-sm backdrop-blur-md dark:bg-card/90">
+            <div className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-cyan-50 via-blue-50 to-indigo-50 px-4 py-1 font-medium shadow-sm backdrop-blur-md dark:bg-none dark:bg-gray-900">
               <span className="text-xl">👋</span>
               <span className="text-md text-gradient-accent">
                 Welcome to DevNest
@@ -40,7 +40,7 @@ export function Hero() {
             </div>
 
             <h1
-              className=" mt-4 max-w-2xl text-5xl font-semibold leading-[1.03]
+              className=" mt-3.5 max-w-2xl text-5xl font-semibold leading-[1.03]
               tracking-[-0.035em] text-foreground sm:text-6xl lg:text-[4.3rem]"
             >
               Connect.
@@ -73,7 +73,7 @@ export function Hero() {
               <Link
                 href="#communities"
                 className="inline-flex items-center
-                  rounded-md border border-gray-700/25 dark:border-border bg-background/60 px-5 py-3
+                  rounded-md border border-gray-700/20 dark:border-border bg-background/60 px-5 py-3
                   text-sm font-medium text-foreground backdrop-blur-sm transition-colors hover:bg-muted"
               >
                 Explore Communities
