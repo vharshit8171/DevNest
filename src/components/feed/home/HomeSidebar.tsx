@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Bookmark,
   FileText,
@@ -15,41 +16,48 @@ import {
 const navigation = [
   {
     label: "Home",
+    href: "/feed",
     icon: Home,
   },
   {
     label: "Explore",
+    href: "/feed/explore",
     icon: Search,
   },
   {
     label: "Posts",
+    href: "/feed/posts",
     icon: FileText,
   },
   {
     label: "Saved",
+    href: "/feed/saved",
     icon: Bookmark,
   },
   {
     label: "Communities",
+    href: "/feed/communities",
     icon: Users,
   },
   {
     label: "Profile",
+    href: "/public-profile",
     icon: UserRound,
   },
   {
     label: "Settings",
+    href: "/feed/settings",
     icon: Settings,
   },
 ];
 
 export default function HomeSidebar() {
-  const [active, setActive] = useState("Home");
+  const pathname = usePathname();
 
   return (
     <aside className="sticky top-24 rounded-md border border-border/70 bg-card/95 p-2.5 shadow-sm backdrop-blur-sm">
-      <div className="px-2.5 pb-2.5 pt-1 mb-1.5">
-        <p className="text-[11px] text-center font-semibold uppercase tracking-[0.12em] text-muted-foreground/70">
+      <div className="mb-1.5 px-2.5 pb-2.5 pt-1">
+        <p className="text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70">
           Navigation
         </p>
       </div>
@@ -57,14 +65,17 @@ export default function HomeSidebar() {
       <nav className="space-y-0.5">
         {navigation.map((item) => {
           const Icon = item.icon;
-          const isActive = active === item.label;
+
+          const isActive =
+            item.href === "/feed"
+              ? pathname === "/feed"
+              : pathname.startsWith(item.href);
 
           return (
-            <button
-              key={item.label}
-              type="button"
-              onClick={() => setActive(item.label)}
-              className={`group relative flex w-full cursor-pointer items-center gap-1.75 rounded-md px-2.5 py-2.5 text-sm font-medium transition-all duration-200 ${
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`group relative flex w-full items-center gap-1.75 rounded-md px-2.5 py-2.5 text-sm font-medium transition-all duration-200 ${
                 isActive
                   ? "bg-linear-to-r from-cyan-500/10 via-blue-500/10 to-indigo-500/10 text-foreground shadow-sm dark:from-indigo-500/15 dark:via-violet-500/10 dark:to-transparent"
                   : "text-muted-foreground hover:bg-muted/70 hover:text-foreground"
@@ -83,12 +94,13 @@ export default function HomeSidebar() {
               >
                 <Icon className="size-4.5" strokeWidth={isActive ? 2.2 : 2} />
               </span>
+
               <span>{item.label}</span>
 
               {isActive && (
                 <span className="ml-auto size-1.5 rounded-full bg-(--accent-from) shadow-[0_0_8px_var(--accent-from)]" />
               )}
-            </button>
+            </Link>
           );
         })}
       </nav>
@@ -102,6 +114,7 @@ export default function HomeSidebar() {
         <span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-muted/60 transition-colors group-hover:bg-red-500/10">
           <LogOut className="size-4.25" />
         </span>
+
         <span>Sign out</span>
       </button>
     </aside>

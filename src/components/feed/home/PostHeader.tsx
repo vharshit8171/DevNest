@@ -16,13 +16,12 @@ export default function PostHeader({ author, createdAt }: PostHeaderProps) {
     <div className="flex items-start justify-between gap-3">
       <div className="flex min-w-0 items-center gap-3">
         <div className="relative shrink-0">
-          <div className="size-13 overflow-hidden rounded-full border border-border bg-muted">
+          <div className="size-11 overflow-hidden rounded-full bg-muted ring-2 ring-border/70 transition-colors group-hover:ring-primary/20">
             <Image
               src={author.avatar}
-              alt={author.name}
-              width={48}
-              height={48}
-              quality={100}
+              alt=""
+              width={44}
+              height={44}
               className="size-full object-cover"
             />
           </div>
@@ -33,27 +32,25 @@ export default function PostHeader({ author, createdAt }: PostHeaderProps) {
         </div>
 
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-foreground">
+          <p className="truncate text-sm font-semibold tracking-tight text-foreground">
             {author.name}
           </p>
 
-          <p className="truncate text-xs font-semibold text-muted-foreground">
-            @{author.username}
-          </p>
+          <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+            <span className="truncate">@{author.username}</span>
+            <span className="size-1 shrink-0 rounded-full bg-muted-foreground/40" />
+            <span className="shrink-0">{createdAt}</span>
+          </div>
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-1">
-        <span className="text-xs font-semibold text-muted-foreground">
-          {createdAt}
-        </span>
-        <button
-          type="button"
-          className="flex size-8 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-        >
-          <MoreHorizontal className="size-4.5" />
-        </button>
-      </div>
+      <button
+        type="button"
+        aria-label="Post options"
+        className="relative z-10 flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+      >
+        <MoreHorizontal className="size-5" />
+      </button>
     </div>
   );
 }

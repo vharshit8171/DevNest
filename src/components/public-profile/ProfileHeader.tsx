@@ -22,13 +22,12 @@ export function ProfileHeader({
   return (
     <section className="relative overflow-hidden border-b border-border">
       <Image
-        src="https://i.pinimg.com/736x/54/19/db/5419db11847945ef5d2be083f2daa4d9.jpg"
+        src="https://i.pinimg.com/736x/70/6d/bf/706dbf41fcb54c4d0cf81811b9da1e1b.jpg"
         alt=""
         fill
         priority
         className="object-cover"
       />
-
 
       <div className="relative flex flex-col gap-4.5 px-5 py-7 sm:flex-row sm:items-center sm:px-9 sm:py-7 lg:px-12">
         <div className="mx-auto shrink-0 sm:mx-0">
@@ -49,12 +48,12 @@ export function ProfileHeader({
             <h1 className="truncate text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Harshit Verma
             </h1>
-            <p className="text-base font-medium text-muted-foreground sm:text-lg">
+            <p className="text-base font-medium text-foreground sm:text-lg">
               @harshit_verma
             </p>
           </div>
 
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm font-semibold text-muted-foreground sm:justify-start sm:text-base">
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm font-semibold text-foreground sm:justify-start sm:text-base">
             <span className="inline-flex items-center gap-1.5">
               <BriefcaseBusiness className="size-4" />
               Full Stack Developer
@@ -69,7 +68,7 @@ export function ProfileHeader({
           </div>
 
           <div className="mt-3 flex justify-center sm:justify-start">
-            <span className="inline-flex items-center gap-1.5 rounded-full border-[0.1px] border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-500 shadow-[0_0_14px_rgba(16,185,129,0.12)] backdrop-blur-sm transition-all duration-200 hover:border-emerald-400/40 hover:bg-emerald-500/15 hover:shadow-[0_0_18px_rgba(16,185,129,0.18)] dark:text-emerald-400">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300/70 bg-emerald-950/45 px-3 py-1 text-sm font-semibold text-emerald-200 shadow-[0_0_14px_rgba(16,185,129,0.18)] backdrop-blur-md transition-all duration-200 hover:border-emerald-300 hover:bg-emerald-950/55 hover:shadow-[0_0_18px_rgba(16,185,129,0.24)]">
               <CheckCircle2 className="size-4" />
               Open to work
             </span>

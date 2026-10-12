@@ -341,6 +341,53 @@ export const posts: Feed[] = [
       ],
     },
   },
+  {
+    id: "3",
+    author: {
+      name: "Alex Johnson",
+      username: "alexjdev",
+      avatar: "/images/avatars/avatar-4.jpg",
+      online: true,
+    },
+    createdAt: "5h ago",
+    content:
+      "A simple utility I use all the time to debounce functions in JavaScript.",
+    tags: [],
+    likes: 206,
+    comments: 52,
+    shares: 12,
+    code: {
+      language: "JavaScript",
+      lines: [
+        "function debounce(fn, delay = 300) {",
+        "  let timeoutId;",
+        "",
+        "  return (...args) => {",
+        "    clearTimeout(timeoutId);",
+        "    timeoutId = setTimeout(() => {",
+        "      fn(...args);",
+        "    }, delay);",
+        "  };",
+        "}",
+      ],
+    },
+  },
+  {
+    id: "4",
+    author: {
+      name: "Sarah Chen",
+      username: "sarahchen",
+      avatar: "/images/avatars/avatar-4.jpg",
+    },
+    createdAt: "2h ago",
+    content:
+      "Just shipped a major refactor of our authentication system 🚀 Cleaner code, better performance, and a much better developer experience. Small improvements compound.",
+    tags: ["webdev", "productivity", "buildinpublic"],
+    likes: 142,
+    comments: 28,
+    shares: 12,
+    bookmarked: true,
+  },
 ];
 
 export const suggestedUsers = [

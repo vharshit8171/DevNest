@@ -50,7 +50,7 @@ export default function SuggestedUsers({ title }: SuggestedUsersProps) {
 
             <button
               type="button"
-              className="shrink-0 cursor-pointer rounded-md border border-border bg-muted px-4 py-2 text-[11px] font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+              className="shrink-0 cursor-pointer rounded-md bg-linear-to-r from-(--accent-from) to-(--accent-to) px-4 py-2 text-[11px] font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
               Follow
             </button>

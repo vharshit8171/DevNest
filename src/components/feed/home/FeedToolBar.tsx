@@ -15,7 +15,7 @@ export default function FeedToolbar({
   onTabChange,
 }: FeedToolbarProps) {
   return (
-    <div className="sticky top-20 z-40 -mx-2 rounded-md px-3 py-3 sm:-mx-1 dark:bg-background/90 dark:shadow-sm dark:backdrop-blur-xl">
+    <div className="sticky top-20 z-40 -mx-2 px-3 py-1 sm:-mx-1 dark:bg-card dark:shadow-sm dark:backdrop-blur-xl">
       <div className="flex flex-col items-center gap-3">
         <div className="flex w-full items-center justify-center gap-2">
           <div className="group relative w-full max-w-2xl">
@@ -49,7 +49,7 @@ export default function FeedToolbar({
                 key={tab}
                 type="button"
                 onClick={() => onTabChange(tab)}
-                className={`relative shrink-0 cursor-pointer rounded-full px-5 py-1.5 text-sm font-medium transition-all duration-200 ${
+                className={`relative shrink-0 cursor-pointer rounded-full px-6.5 py-1.25 text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-muted text-foreground shadow-sm dark:bg-background"
                     : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
